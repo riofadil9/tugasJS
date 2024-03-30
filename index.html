@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            width: {
+                '128': '30rem',
+                '129': '38.125rem',
+            }
+          }
+        }
+      </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex justify-center">
+        <h1 class="font-bold text-2xl mt-48 mb-14" id="pertanyaan">Yakin kan Profesi Anda !</h1>
+    </div>
+    <div class="flex justify-center">
+        <div class="flex-col justify-center bg-[#DBDBDB] w-129 h-80 rounded-3xl" id="box1">
+            <div class="flex justify-center">
+                <img class="-mt-14" src="asset/detektif.svg" alt="" id="gambar">
+            </div>
+            <div class="flex justify-center">
+                <h1 class="bg-[#FEEEE2] w-128 h-14 text-center rounded-2xl text-lg font-bold py-3" id="text1">Apakah anda seorang Detective?</h1>
+            </div>
+            <div class="flex justify-center gap-6 mt-10">
+                <button class="h-10 px-12 rounded-xl bg-[#6FD240] font-bold text-base" id="iya">Iya!!</button>
+                <button class="h-10 px-10 rounded-xl bg-[#E12E2E] text-white font-bold text-base" id="tidak">Tidak!!</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var pertanyaan = document.getElementById('pertanyaan');
+    var gambar = document.getElementById('gambar');
+    var box1 = document.getElementById('box1');
+    var text = document.getElementById('text1');
+    var btn1 = document.getElementById('iya');
+    var btn2 = document.getElementById('tidak');
+
+    btn1.addEventListener('click', function(){
+        pertanyaan.textContent = 'Anda Berbohong!';
+        gambar.src = 'asset/teknisi.svg';
+        box1.style.backgroundColor = '#E12E2E';
+        text.textContent = 'Anda adalah seorang Teknisi';
+        btn1.style.display = 'none';
+        btn1.setAttribute('disable','disable');
+        btn2.style.display = 'none';
+        btn2.setAttribute('disable','disable');
+    })
+    btn2.addEventListener('click', function(){
+        pertanyaan.textContent = 'Anda Benar!';
+        gambar.src = 'asset/mahasiswa.svg';
+        box1.style.backgroundColor = '#6FD240';
+        text.textContent = 'Anda adalah seorang Mahasiswa';
+        btn1.style.display = 'none';
+        btn1.setAttribute('disable','disable');
+        btn2.style.display = 'none';
+        btn2.setAttribute('disable','disable');
+    })
+</script>
+</html>
